@@ -7,7 +7,7 @@ using TestPlatform.DAL.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers()
-    .AddJsonOptions(options =>
+.AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.WriteIndented = true;
     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
@@ -31,7 +31,7 @@ builder.Services.AddDbContext<TestPlatformContext>(options =>
 {
     options.EnableSensitiveDataLogging();
     options.UseSqlServer(
-       builder.Configuration.GetConnectionString("DockerConnection"),
+       builder.Configuration.GetConnectionString("SmartNetConnection"),
  
        sqlServerOptionsAction: sqlOptions =>
        {
@@ -44,11 +44,6 @@ builder.Services.AddDbContext<TestPlatformContext>(options =>
 });
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-}
 
 app.UseSwagger();
 app.UseSwaggerUI();
