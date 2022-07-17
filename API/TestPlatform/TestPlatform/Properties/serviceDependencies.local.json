@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "postgresql1": {
+      "ignored": "true",
+      "suggestion": "true",
+      "type": "postgresql",
+      "connectionId": ""
+    },
+    "mssql2": {
+      "ignored": "true",
+      "suggestion": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:DockerConnection"
+    },
+    "mssql1": {
+      "secretStore": null,
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/rambls-server/databases/test-platform",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DefaultConnection"
+    }
+  }
+}
